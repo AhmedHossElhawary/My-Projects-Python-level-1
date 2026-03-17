@@ -1,4 +1,7 @@
 import random
+import os
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def hangman_stages():
     return [  """
@@ -108,6 +111,7 @@ while True:
     play()
     me = input("Do you want to play Hangman? (yes/no): ").lower()
     me = me.strip()
+    clear_screen()
     if me in ["no", "n"]:
         print("Thanks for playing! Goodbye!")
         break
